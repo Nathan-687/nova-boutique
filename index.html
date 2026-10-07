@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NOVA — Streetwear</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="#">NOVA</a>
+  <nav>
+    <a href="#shop">Boutique</a><a href="#about">À propos</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-btn" onclick="toggleCart()">Panier (<span id="count">0</span>)</button>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">NOUVELLE COLLECTION</p>
+    <h1>Ton style.<br><span>Sans compromis.</span></h1>
+    <p class="hero-text">Des essentiels streetwear pensés pour tous les jours.</p>
+    <a class="cta" href="#shop">Découvrir la collection</a>
+  </div>
+</section>
+
+<main id="shop">
+  <div class="section-head">
+    <div><p class="eyebrow">COLLECTION</p><h2>Nos pièces</h2></div>
+    <select id="filter" onchange="renderProducts()">
+      <option value="all">Tout afficher</option><option value="hoodie">Hoodies</option>
+      <option value="tshirt">T-shirts</option><option value="pants">Pantalons</option>
+    </select>
+  </div>
+  <div id="products" class="grid"></div>
+</main>
+
+<section id="about" class="about">
+  <div><p class="eyebrow">NOVA</p><h2>Simple. Moderne. Unique.</h2></div>
+  <p>Une boutique indépendante dédiée aux vêtements streetwear accessibles et faciles à porter. Remplace ce texte par l'histoire de ta marque.</p>
+</section>
+
+<section id="contact" class="contact">
+  <p class="eyebrow">CONTACT</p><h2>Une question ?</h2>
+  <form onsubmit="sendContact(event)">
+    <input required placeholder="Ton prénom">
+    <input required type="email" placeholder="Ton e-mail">
+    <textarea required placeholder="Ton message"></textarea>
+    <button class="cta" type="submit">Envoyer</button>
+  </form>
+</section>
+
+<footer><strong>NOVA</strong><span>© 2026 — Tous droits réservés</span></footer>
+
+<aside id="cart">
+  <div class="cart-top"><h2>Ton panier</h2><button onclick="toggleCart()">×</button></div>
+  <div id="cart-items"></div>
+  <div class="total"><span>Total</span><strong id="total">0,00 €</strong></div>
+  <button class="checkout" onclick="checkout()">Commander</button>
+</aside>
+<div id="overlay" onclick="toggleCart()"></div>
+<script src="script.js"></script>
+</body>
+</html>
